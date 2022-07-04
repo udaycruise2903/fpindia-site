@@ -26,22 +26,22 @@ renderBody rp model r = do
   H.div ! A.class_ "container mx-auto mt-8 p-2" $ do
     renderNavbar rp
     H.h1 ! A.class_ "text-3xl font-bold" $ H.toHtml $ routeTitle r
-    H.img ! A.src (staticRouteUrl rp model "fpindia-logo.png") ! A.class_ "w-32" ! A.alt "FPIndia Logo"
+    H.img ! A.src (staticRouteUrl rp model "logo.png") ! A.class_ "w-32" ! A.alt "FPIndia Logo"
     case r of
       HtmlRoute_Index -> do
         renderMarkdown model "index.md"
       HtmlRoute_About -> do
         renderMarkdown model "about.md"
       HtmlRoute_UpcomingEvents -> do
-        renderMarkdown model "events.md"
+        "You are on the upcoming events page."
       HtmlRoute_PastEvents -> do
-        renderMarkdown model "archive.md"
+        "You are on the past events page."
       HtmlRoute_ConnectWithUs -> do
-        renderMarkdown model "connect.md"
+        "you are on the Connect with us page."
       HtmlRoute_FpJobsInIndia -> do
-        renderMarkdown model "jobs.md"
+        "you are on the FP jobs in india page."
       HtmlRoute_Resources -> do
-        renderMarkdown model "resources.md"
+        "you are on the resources page."
     renderFooter
 
 renderNavbar :: Prism' FilePath Route -> H.Html
